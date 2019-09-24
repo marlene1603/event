@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Connection</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <form [formGroup]="loginForm" (submit)="onLogin(loginForm.value)">
+      <ion-item>
+        <ion-label color="primary" position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Mot de passe</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!loginForm.valid">Se Connecter</ion-button>
+    </form>
+    <div *ngIf="error">
+        <ion-label color="danger">{{message}}</ion-label>
+    </div>
+
+    <br />
+    <div> Pas de compte ? inscrivez-vous <a [routerLink]="['/register']">ICI</a></div>
+  </ion-content>
