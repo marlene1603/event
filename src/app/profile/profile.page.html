@@ -8,5 +8,35 @@
 </ion-header>
 
 <ion-content>
+    <form [formGroup]="profileForm" (ngSubmit)="profile(profileForm.value)">
+        <ion-item>
+            <ion-label>Nom</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Prénom</ion-label>
+            <ion-input type="text" formControlName="lastname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Adresse Mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <!-- <label for="role">Photo du profile</label> -->
+        <ion-item>
+            <ion-img class="card-img-top" [src]="'../../assets/img/avatar_homme.png'" width='5px'></ion-img>
+            <ion-button onclick="openFileChooser()">
+                <ion-icon name="attach"></ion-icon>
+            </ion-button>
+            <ion-button onclick="openCam()">
+                <ion-icon name="camera"></ion-icon>
+            </ion-button>
+        </ion-item>
+
+        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!profileForm.valid">Enregistrer</ion-button>
+        <!-- <button ion-button type="submit" [disabled]="!addEventForm.valid">Submit</button> -->
+
+    </form>
 
 </ion-content>

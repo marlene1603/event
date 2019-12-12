@@ -1,12 +1,74 @@
 <ion-header>
     <ion-toolbar color="secondary">
-      <ion-title>Poster un evenement</ion-title>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
+        <ion-title>Poster un evenement</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <!-- <form [formGroup]="addEventForm" (submit)="onAddEvent(addEventForm.value)"> 
+   
+        <ion-item>
+            <ion-label color="primary" position="floating">Titre de l'évenement</ion-label>
+            <ion-input type="text" formControlName="title" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" position="floating">Categorie</ion-label>
+            <ion-input type="text" formControlName="categorie" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" position="floating">Lieu</ion-label>
+            <ion-input type="text" formControlName="lieu" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" position="floating">Date de l'évenement</ion-label>
+            <ion-input type="date" formControlName="date_event" required></ion-input>
+        </ion-item>
+        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!addEventForm.valid">Se Connecter</ion-button>
+    </form> -->
+    <form [formGroup]="addEventForm" (ngSubmit)="onAddEvent(addEventForm.value)">
+        <ion-item>
+            <ion-label>Titre de l'évenement</ion-label>
+            <ion-input type="text" formControlName="title"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Catégorie</ion-label>
+            <ion-select value="cinema" okText="Okay" cancelText="Dismiss" formControlName="categorie">
+                <ion-select-option value="cinema">Cinéma</ion-select-option>
+                <ion-select-option value="music">Music</ion-select-option>
+                <ion-select-option value="educatif">Educatif</ion-select-option>
+                <ion-select-option value="religion">Religion</ion-select-option>
+            </ion-select>
+        </ion-item>
 
+        <ion-item>
+            <ion-label>Lieu</ion-label>
+            <ion-input type="text" formControlName="lieu"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Date de l'évenement</ion-label>
+            <ion-input type="date" formControlName="date"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-textarea formControlName="description"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <!-- <label for="role">Photo du profile</label> -->
+            <ion-img class="card-img-top" [src]="'../../assets/img/avatar_homme.png'" width='100px'></ion-img>
+            <ion-button onclick="openFileChooser()">
+                <ion-icon name="attach"></ion-icon>
+            </ion-button>
+            <ion-button onclick="openCam()">
+                <ion-icon name="camera"></ion-icon>
+            </ion-button>
+        </ion-item>
+        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!addEventForm.valid">Enregistrer</ion-button>
+        <!-- <button ion-button type="submit" [disabled]="!addEventForm.valid">Submit</button> -->
+
+    </form>
 </ion-content>

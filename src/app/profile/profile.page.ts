@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  profileForm;
 
-  ngOnInit() {
+  constructor(private route : ActivatedRoute,private router: Router, public formBuilder: FormBuilder) { 
+    this.profileForm= this.formBuilder.group({
+      name: '',
+      lastmane: '',
+      email:'',
+    });
   }
+  ngOnInit() {
+    
+}
 
 }

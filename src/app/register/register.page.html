@@ -1,45 +1,44 @@
 <ion-header>
     <ion-toolbar color="secondary">
-      <ion-title>S'inscrire</ion-title>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+        <ion-title>S'inscrire</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     </ion-toolbar>
-  </ion-header>
-  
-  <ion-content padding>
+</ion-header>
+
+<ion-content padding>
     <form [formGroup]="registerForm" (submit)="onRegister(registerForm.value)">
-      <ion-item>
-        <ion-label color="primary" position="floating">Nom d'utilisateur</ion-label>
-        <ion-input type="text" formControlName="name" required></ion-input>
-      </ion-item> <br />
-      <ion-item>
-        <ion-label color="primary" position="floating">Email</ion-label>
-        <ion-input type="text" formControlName="email" required></ion-input>
-      </ion-item> <br />
+        <ion-item>
+            <ion-label color="primary" position="floating">Nom d'utilisateur</ion-label>
+            <ion-input type="text" formControlName="name" required></ion-input>
+        </ion-item> <br />
+        <ion-item>
+            <ion-label color="primary" position="floating">Email</ion-label>
+            <ion-input type="text" formControlName="email" required></ion-input>
+        </ion-item> <br />
 
-      <ion-item>
-        <ion-label color="primary" position="floating">Mot de passe</ion-label>
-        <ion-input type="password" formControlName="password" required></ion-input>
-      </ion-item> <br />
+        <ion-item>
+            <ion-label color="primary" position="floating">Mot de passe</ion-label>
+            <ion-input type="password" formControlName="password" required></ion-input>
+        </ion-item> <br />
 
-      <ion-item>
-        <!-- <label for="role">Photo du profile</label> -->
-        <ion-img class="card-img-top" [src]="'https://api.adorable.io/avatars/109/fire.png'" width='100px'></ion-img>
-        <ion-button onclick="openFileChooser()">
-          <ion-icon  name="attach"></ion-icon>
-        </ion-button>
-        <ion-button onclick="openCam()">
-          <ion-icon  name="camera"></ion-icon>
-        </ion-button>
-      </ion-item> <br />
+        <ion-item>
+            <!-- <label for="role">Photo du profile</label> -->
+            <ion-img class="card-img-top" [src]="'https://api.adorable.io/avatars/109/fire.png'" width='100px'></ion-img>
+            <ion-button onclick="openFileChooser()">
+                <ion-icon name="attach"></ion-icon>
+            </ion-button>
+            <ion-button onclick="openCam()">
+                <ion-icon name="camera"></ion-icon>
+            </ion-button>
+        </ion-item> <br />
 
-      <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!registerForm.valid">S'inscrire</ion-button>
+        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!registerForm.valid">S'inscrire</ion-button>
     </form>
     <div *ngIf="error">
-      <ion-label color="danger">{{message}}</ion-label>
+        <ion-label color="danger">{{message}}</ion-label>
     </div>
     <br />
     <div>Deja un compte ? connnectez vous <a [routerLink]="['/login']">ICI</a></div>
-  </ion-content>
-  
+</ion-content>

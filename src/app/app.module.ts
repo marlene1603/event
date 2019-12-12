@@ -20,6 +20,7 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestor
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { EventService } from './services/event.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     SplashScreen,
     AngularFirestore,
     FileChooser,
+    EventService,
     Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

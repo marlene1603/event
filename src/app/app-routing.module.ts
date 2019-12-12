@@ -9,7 +9,7 @@ const routes: Routes = [
   //{ path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule'},//canActivate: [AuthGuard] 
   { path: 'add-event', loadChildren: './add-event/add-event.module#AddEventPageModule', canActivate: [AuthGuard]},
   { path: 'detail-event', loadChildren: './detail-event/detail-event.module#DetailEventPageModule' },
   //{ path: 'best-places', loadChildren: './best-places/best-places.module#BestPlacesPageModule' },
